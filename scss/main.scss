@@ -1,0 +1,114 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Kumbh Sans", sans-serif;
+    background-color: hsl(185, 75%, 39%);
+}
+.background__top,
+.background__bottom {
+    position: fixed;
+    z-index: -1;
+}
+.background__top {
+    top: -70%;
+    left: -16%;
+    @media (max-width:700px) {
+        width: 130vw;
+        top: -40%;
+        left: -77%;
+    }
+}
+.background__bottom {
+    bottom: -88%;
+    right: -14%;
+    @media (max-width:700px) {
+        width: 150vw;
+        bottom: -40%;
+        right: -100%;
+    }
+}
+.wrapper {
+    z-index: 1;
+    width: 20rem;
+    &__background {
+        height: 20vh;
+        background-image: url("/images/bg-pattern-card.svg");
+        background-size: cover;
+        border-radius: 20px 20px 0 0;
+    }
+    &__profile {
+        height: 25vh;
+        background-color: #fff;
+        position: relative;
+    }
+    &__photo {
+        border-radius: 50%;
+        padding: -5px;
+        background-color: #fff;
+        border: 5px solid #fff;
+        position: absolute;
+        top: -48px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &__info {
+        text-align: center;
+        width: max-content;
+        margin: 0 auto;
+        padding-top: 5.3rem;
+    }
+    &__details {
+        font-size: 1.2rem;
+        color: hsl(0, 0%, 59%);
+    }
+    &__name {
+        color: hsl(229, 23%, 23%);
+        font-weight: 700;
+    }
+    &__place {
+        color: hsl(0, 0%, 59%);
+        padding-top: 1rem;
+        font-size: 0.9rem;
+        font-weight: normal;
+    }
+    &__numbers {
+        border-top: 1px solid #ddd;
+        height: 15vh;
+        background-color: #fff;
+        border-radius: 0 0 20px 20px;
+        display: grid;
+        grid-auto-flow: column;
+        place-items: center;
+        text-align: center;
+    }
+    &__counter {
+        strong {
+            font-weight: 700;
+            color: hsl(229, 23%, 23%);
+            font-size: 1.2rem;
+        }
+        p {
+            color: hsl(0, 0%, 59%);
+            font-size: 0.6rem;
+            padding-top: 0.5rem;
+            font-weight: normal;
+            letter-spacing: 0.2em;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .wrapper {
+        width: 25rem;
+    }
+}
+
